@@ -1,0 +1,37 @@
+- name: check for software packages and run classifier
+  hosts: cluster
+  remote_user: joba
+
+  tasks:
+    - name: ensure lshw is installed
+      become: true
+      apt:
+        name: lshw
+        state: latest
+    - name: ensure sysbench is installed
+      become: true
+      apt:
+        name: sysbench
+        state: latest
+    - name: ensure fio is installed
+      become: true
+      apt:
+        name: fio
+        state: latest
+    - name: ensure java is installed
+      become: true
+      apt:
+        name: default-jre
+    - name: copy executable jar
+      become: yes
+      become_user: root
+      copy:
+        src: ../cluster-classifier-client/target/cluster-classifier-0.0.1-SNAPSHOT.jar
+        dest: /opt/cluster-classifier-0.0.1-SNAPSHOT.jar
+        owner: root
+        group: root
+        mode: 755
+    - name: execute jar
+      become: yes
+      become_user: root
+      shell:  java -jar /opt/cluster-classifier-0.0.1-SNAPSHOT.jar
