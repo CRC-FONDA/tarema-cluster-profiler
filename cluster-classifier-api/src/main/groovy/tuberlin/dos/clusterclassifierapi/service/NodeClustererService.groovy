@@ -76,14 +76,14 @@ class NodeClustererService {
         List<DoublePointWithLabel> doublePointList = new ArrayList<>()
 
         nodeRepresentationList.forEach((nodeRep) -> {
-            double[] d = new double[7]
+            double[] d = new double[3]
             d[0] = nodeRep.getCpu().getCpu_speed_st_events_per_second()
             d[1] = nodeRep.getCpu().getCpu_speed_mt_events_per_second()
             d[2] = nodeRep.getRam().getRam_speed()
-            d[3] = nodeRep.getIo().getSequ_read_bw()
-            d[4] = nodeRep.getIo().getSequ_write_bw()
-            d[5] = nodeRep.getIo().getRand_read_bw()
-            d[6] = nodeRep.getIo().getRand_write_bw()
+          //  d[3] = nodeRep.getIo().getSequ_read_bw()
+          //  d[4] = nodeRep.getIo().getSequ_write_bw()
+           // d[5] = nodeRep.getIo().getRand_read_bw()
+           // d[6] = nodeRep.getIo().getRand_write_bw()
             doublePointList.add(new DoublePointWithLabel(d, nodeRep.node_ip))
         })
 
@@ -178,7 +178,7 @@ class NodeClustererService {
         } else if (row[2] == -1) {
             nodeRepresentation.nodeLabels.add(NodeLabel.RAM_0)
         }
-
+/*
         if (row[3] == 1) {
             nodeRepresentation.nodeLabels.add(NodeLabel.SEQ_R_2)
         } else if (row[3] == 0) {
@@ -210,6 +210,8 @@ class NodeClustererService {
         } else if (row[6] == -1) {
             nodeRepresentation.nodeLabels.add(NodeLabel.RAND_W_0)
         }
+
+         */
 
         nodeRepresentationRepository.save(nodeRepresentation)
     }

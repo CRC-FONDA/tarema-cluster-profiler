@@ -2,13 +2,13 @@ package tuberlin.dos.clusterclassifier.entities.enums
 
 enum NodeLabel {
 
-    CPU_ST_HIGH, CPU_ST_MEDIUM, CPU_ST_LOW,
-    CPU_MT_HIGH, CPU_MT_MEDIUM, CPU_MT_LOW,
-    RAM_HIGH, RAM_MEDIUM, RAM_LOW,
-    SEQ_R_HIGH, SEQ_R_MEDIUM, SEQ_R_LOW,
-    SEQ_W_HIGH, SEQ_W_MEDIUM, SEQ_W_LOW,
-    RAND_R_HIGH, RAND_R_MEDIUM, RAND_R_LOW,
-    RAND_W_HIGH, RAND_W_MEDIUM, RAND_W_LOW,
-    GPU_HIGH, GPU_MEDIUM, GPU_LOW
+    CPU_ST_2, CPU_ST_1, CPU_ST_0,
+    CPU_MT_2, CPU_MT_1, CPU_MT_0,
+    RAM_2, RAM_1, RAM_0,
+    SEQ_R_2, SEQ_R_1, SEQ_R_0,
+    SEQ_W_2, SEQ_W_1, SEQ_W_0,
+    RAND_R_2, RAND_R_1, RAND_R_0,
+    RAND_W_2, RAND_W_1, RAND_W_0,
+    GPU_2, GPU_1, GPU_0
 
 }

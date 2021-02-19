@@ -43,14 +43,16 @@ class KubernetesNodeLabeller {
 
                         nodeRep.nodeLabels.forEach(label -> {
                             if (label.toString().split("_").size() == 3) {
-                                labels.put(label.toString().substring(0, label.toString().lastIndexOf("_")), label.toString().split("_")[label.toString().split("_").size()-1])
+                                // labels.put(label.toString().substring(0, label.toString().lastIndexOf("_")), label.toString().split("_")[label.toString().split("_").size()-1])
+                                   labels.put(label.toString().substring(0, label.toString().lastIndexOf("_")), "7")
                             } else {
-                                labels.put(label.toString().split("_")[0], label.toString().split("_")[label.toString().split("_").size()-1])
+                                // labels.put(label.toString().split("_")[0], label.toString().split("_")[label.toString().split("_").size()-1])
+                                  labels.put(label.toString().split("_")[0], "7")
                             }
 
                         })
 
-                        client.nodes().withName(node.getMetadata().getName()).edit( s -> new NodeBuilder(s).editMetadata().addToLabels(labels).endMetadata().build())
+                        client.nodes().withName(node.getMetadata().getName()).edit(s -> new NodeBuilder(s).editMetadata().addToLabels(labels).endMetadata().build())
 
 
                     }
