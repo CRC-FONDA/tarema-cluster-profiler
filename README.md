@@ -1,4 +1,4 @@
-# Cluster Classifier Tool
+# Cluster Profiler Tool
 
 This small tool consists of two applictions. The cluster-classifier-client analyses the nodes inside a heterogeneous cluster. We provide the following information:
 
