@@ -72,8 +72,7 @@ For clustering the nodes we are using the KMeansPlusPlusClusterer (org.apache.co
 **To disable labelling for Kubernetes go to the application.properties file under cluster-classifier-api and set kube.enable to false. Switch to true to enable Kubernetes labelling.**
 
 After clustering the nodes, our system starts labelling the nodes.  
-In the first step, we compare the centroids, by defining the quartiles (0,25;0,5;0,75) of them. 
-We then set every node below or equals the 0,25 quartile to ATTRIBUTE_LOW, 0,5-0,75 to ATTRIBUTE_MEDIUM and above or equals 0,75 to ATTRIBUTE_HIGH (ATTRIBUTE means CPU, RAM...) 
+In the first step, we compare the centroids, by defining the quartiles depending on the number of node groups. 
 
 These labels are then stored in the database.
 
