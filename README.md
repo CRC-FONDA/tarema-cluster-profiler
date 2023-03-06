@@ -14,6 +14,17 @@ The cluster-classifier-api provides the gathered information as a REST API for u
 * Labelling the nodes inside a cluster based on the cluster centroids
 * Labels the nodes controlled by Kubernetes to enable fine-granular mapping of computing resources
 
+## BibTeX
+```bibtex
+@INPROCEEDINGS{bader2021tarema,
+  author={Bader, Jonathan and Thamsen, Lauritz and Kulagina, Svetlana and Will, Jonathan and Meyerhenke, Henning and Kao, Odej},
+  booktitle={2021 IEEE International Conference on Big Data (Big Data)}, 
+  title={Tarema: Adaptive Resource Allocation for Scalable Scientific Workflows in Heterogeneous Clusters}, 
+  year={2021},
+  publisher={IEEE},
+  pages={65-75},
+  doi={10.1109/BigData52589.2021.9671519}}
+```
 
 
 ## Prerequisites
